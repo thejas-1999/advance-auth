@@ -5,7 +5,8 @@ const connectDb = () => {
     mongoose.connect(process.env.MONGO_URI);
     console.log(`connected to database`);
   } catch (error) {
-    console.log(error);
+    console.log(`Connection error ${error}`);
+    process.exit(1);
   }
 };
 
